@@ -12,6 +12,10 @@ ggplot(df, aes(x=Day, y=log10(value),group = PatientID,color = factor(Estimated)
 
 dfT <- med_and_quantiles(df)
 dfTlg <- med_and_quantiles_lg10(df)
+dfT0 <- med_and_quantiles(df[df$Estimated==0,])
+dfT1 <- med_and_quantiles(df[df$Estimated==1,])
+dfT0lg <- med_and_quantiles_lg10(df[df$Estimated==0,])
+dfT1lg <- med_and_quantiles_lg10(df[df$Estimated==1,])
 
 pl_lg <- ggplot() + theme_bw() + xlim(-2.3,23) + #scale_y_log10() +
   geom_ribbon(data = dfTlg, aes(x=Day, ymin = q1, ymax = q2), alpha=.4,fill = 'purple') + 
@@ -33,12 +37,8 @@ pl10lg <- ggplot() + theme_bw() + xlim(-2.3,23) +
   scale_color_manual(name='Original data',labels=c("Viral load","Cycle\nthreshold"),values = mycolors)
 pl10lg
 
-dff <- data.frame('dy'=ff,'cou'=table(df$Day)[1:26])
-plb <-ggplot(dff, aes(x=dy,y=cou.Freq)) + geom_bar(stat = 'identity',fill='purple',alpha=.6) + 
-  theme_bw() + xlab('Days after symptom onset') + ylab('No. of data points')
-plb
-
 ff <- seq(-2,23,1)
+
 dff <- data.frame('dy'=ff,'cou'=table(df$Day)[1:26])
 plb <-ggplot(dff, aes(x=dy,y=cou.Freq)) + geom_bar(stat = 'identity',fill='purple',alpha=.6) + 
   theme_bw() + xlab('Days after symptom onset') + ylab('No. of data points')
@@ -56,7 +56,6 @@ pl10b <- ggplot(dff5) + theme_bw() +
   theme_bw() + xlab('Days after symptom onset') + ylab('No. of data points')
 pl10b
 
-
-
+#Figure 1
 cowplot::plot_grid(pl_lg,pl10lg,plb,pl10b, nrow=2, labels = c('a','b','c','d'),
                    rel_heights = c(1,0.5,1,0.5))
