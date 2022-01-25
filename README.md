@@ -1,4 +1,4 @@
 # Viral_Load_Covid19
-This repository supports modelling work on viral load dynamics in patients with symptomatic SARS-Cov-2 infections, as reported in this report: [Modelling upper respiratory viral load dynamics of SARS-CoV-2](https://doi.org/10.1101/2021.05.01.21256182) by Challenger et al.
+This repository supports modelling work on viral load dynamics in patients with symptomatic SARS-Cov-2 infections, as reported in this publication in BMC Medicine: [Modelling upper respiratory viral load dynamics of SARS-CoV-2](https://doi.org/10.1186/s12916-021-02220-0) by JD Challenger, CY Foo, Y Wu, AWC Yan, M. Moradi Marjaneh, F Liew, RS Thwaites, LC Okell, AJ Cunnington.
 
-Upon publication, the data used in this study ('CombinedDataset.xlsx') will be made available in the Supplementary Materials. These scripts can then be used to generate the figures in the article.
+The data used in this study ('CombinedDataset.xlsx') is now available here. These scripts can be used to generate the figures in the article.
