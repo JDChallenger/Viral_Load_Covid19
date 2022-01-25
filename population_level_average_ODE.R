@@ -65,6 +65,6 @@ dfa <- data.frame('median' = medd, 'lower'=lwer, 'upper'=uppr, 'lowerB'=lwerB, '
 ggplot(dfa) + geom_line(aes(x=day,y=median)) + scale_y_log10() + theme_bw() + 
   geom_ribbon(aes(x=day,ymin=lower,ymax=upper),alpha=.45,fill = 'cyan') + 
   geom_ribbon(aes(x=day,ymin=lowerB,ymax=upperB),alpha=.2,fill = 'cyan') + 
-  xlab('Days after symptom onset') + ylab('log10 (Viral copies / ml)') #+ 
-#Add data (when available on github, after publication)
-#geom_point(data=df3, aes(x=Day, y=value,color = Study))
+  xlab('Days after symptom onset') + ylab('log10 (Viral copies / ml)') + 
+  #Add data. Just showing data from patients  with >2 samples (as used to fit the model)
+  geom_point(data=df4, aes(x=Day, y=value,color = factor(StudyNum))) + labs(color = 'Study')

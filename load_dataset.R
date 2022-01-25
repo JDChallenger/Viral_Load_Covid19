@@ -1,4 +1,5 @@
 library(readxl)
+library(ggplot2)
 
 #The two datasets we'll use for the analysis are:
 # (i) df (everything); 
