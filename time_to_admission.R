@@ -1,10 +1,4 @@
-#Extract first VL measure, to see if it varies with severity..
-#Practice on study G, 11 patients
-# str(dfG)
-# table(dfG$PatientID)
-# lst <- unique(dfG$PatientID)
-# lst[1]
-# l <- length(lst)
+#Useful functions
 
 admission_day <- function(dfG,l){
   lst <- unique(dfG$PatientID)

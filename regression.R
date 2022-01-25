@@ -1,9 +1,10 @@
-#df4 loaded
+#Load df4 by running 'load_dataset.R'
+#Please note that running the Stan models can be slow!
 
 library(rstan)
 library(dplyr)
 #rstan_options(auto_write=TRUE)
-options(mc.cores = 4)
+options(mc.cores = 4) #Remove this if you don't have a multicore machine
 library(rethinking)
 library(ggplot2)
 library(gridExtra)
